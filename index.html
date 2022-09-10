@@ -3,38 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | FAQ Accordion Card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script defer src="./script.js"></script>
 </head>
-<body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
-
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
+<body class="flex flexcol flexcenter no-margin">
+  <main class="container flex flexrow flexspace-center no-margin">
+    <h1 class="sr-only">Frequently Asked Question</h1>
+    <figure class="left-container flex flexcol flexcenter-end no-margin">
+      <img id='image-woman'src="./images/illustration-woman-online-desktop.svg" alt="decorative image" />
+      <img id='image-box' src='./images/illustration-box-desktop.svg' alt="decorative moving-mox" />
+    </figure>
+    <div class="right-container flex flexcol">
+      <h2 aria-hidden='true' class='tittle'>FAQ</h2>
+      <h3 class="question" data-question="#a-1" for="image-box">How many team members can I invite?
+        <svg aria-hidden='true'class='arrow'width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/>
+        </svg>
+      </h3>
+      <p id="a-1" class="answer">
+        You can invite up to 2 additional users on the Free plan. 
+        There is no limit on team members for the Premium plan.
+      </p>
+      <hr aria-hidden='true' class="divider" />
+      <h3 class="question" data-question="#a-2">What is the maximum file upload size?
+        <svg aria-hidden='true' class='arrow'width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/>
+        </svg>
+      </h3>
+      <p id="a-2" class="answer">
+        No more than 2GB. All files in your account must fit 
+        your allotted storage space.
+      </p>
+      <hr aria-hidden='true' class="divider" />
+      <h3 class="question" data-question="#a-3">How do I reset my password?
+        <svg aria-hidden='true' class='arrow'width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/>
+        </svg>
+      </h3>
+      <p id="a-3" class="answer">
+        Click “Forgot password” from the login page or “Change password” 
+        from your profile page. A reset link will be emailed to you.
+      </p>
+      <hr aria-hidden='true' class="divider" />
+      <h3 class="question" data-question="#a-4">Can I cancel my subscription?
+        <svg aria-hidden='true' class='arrow'width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/>
+        </svg>
+      </h3>
+      <p id="a-4" class="answer">
+        Yes! Send us a message and we&apos;ll process your 
+        request no questions asked.
+      </p>
+      <hr aria-hidden='true' class="divider" />
+      <h3 class="question" data-question="#a-5">Do you provide additional support?
+        <svg aria-hidden='true' class='arrow'width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/>
+        </svg>
+      </h3>
+      <p id="a-5" class="answer">Chat and email support is available 24/7. 
+        Phone lines are open during normal business hours.
+      </p>
+      <hr aria-hidden='true' class="divider" />
+    </div>
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="#">EngineerCookie</a>.
+  </footer>
 </body>
 </html>

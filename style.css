@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 12px;
+
+/*Variables*/
+    /*Main Colors Text*/
+    --color-main-blueDark: hsl(238, 29%, 16%);
+    --color-main-orange: hsl(14, 88%, 65%);
+
+    /* Aux Colors Text*/
+    --color-aux-blueGray: hsl(237, 12%, 33%);
+    --color-aux-blueDark: hsl(240, 6%, 50%);
+
+    /*Color Gradient background*/
+    --color-background-violet: hsl(273, 75%, 66%);
+    --color-background-blue: hsl(240, 73%, 65%);
+    --color-background: linear-gradient(180deg, var(--color-background-violet) 0%, var(--color-background-blue) 50%);
+    
+    /*Decorations*/
+    --decor-dividerColor: hsl(240, 5%, 91%);
+    --font-family: 'Kumbh Sans', sans-serif; /*weight 400 & 700*/
+    --font-size-tittle: 2.5rem;
+    --font-size-question: 1.2rem;
+    --font-size-answer: 1rem;
+    --line-height: 1.5rem;
+}
+
+body {
+    font-family: var(--font-family);
+    width: 100vw;
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+/*Utility classes START*/
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    -webkit-clip-path: inset(50%) !important;
+    height: 1px !important;
+    width: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+.flex{display: flex;}
+.flexrow{flex-direction: row;}
+.flexcol{flex-direction: column;}
+.flexcenter{justify-content: center; align-items: center;}
+.flexspace-center{justify-content: space-between; align-items: center}
+.flexcenter-start{justify-content: flex-start; align-items: flex-start;}
+.flexcenter-end{justify-content: center; align-items: flex-end; overflow: hidden;}
+.no-margin{margin: 0;}
+/*Utility classes END*/
+
+.tittle{
+    font-size: var(--font-size-tittle);
+    font-weight: 700;
+    padding: 0.3rem 0;
+}
+
+.question{
+    font-size: var(--font-size-question); 
+    font-weight: 400; 
+    padding-top: 0;
+    color: var(--color-main-blueDark);
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.question > .arrow {
+    margin-left: auto;
+    margin-right: 1rem ;
+    color: var(--color-main-orange);
+}
+
+.question.active {
+    font-weight: 700;
+}
+
+.question.active > .arrow {
+    rotate: 180deg;
+}
+
+.question:hover {
+    color: var(--color-main-orange);
+    cursor: pointer;
+}
+
+.divider {
+    width: 100%;
+    border-top: 0;
+    color: var(--decor-dividerColor);
+    margin: 1.5rem 0;
+
+}
+
+.answer{
+    font-size: var(--font-size-answer); 
+    font-weight: 400;
+    color: var(--color-aux-blueDark);
+    margin: 0;
+    padding: 1rem 0 0.5rem 0;
+    width: min(90%, 46ch);
+    display: none;
+    transition: 0.8s;
+}
+
+.answer.active {
+    display: block;
+}
+
+.container {
+    background-color: white;
+    border-radius: 25px;
+    width: 920px;
+    height: 510px;
+    position: relative;
+}
+
+.left-container{
+    height: 100%;
+    background: url('./images/bg-pattern-desktop.svg');
+    width: 43%;
+    background-repeat: no-repeat;
+    background-position: 100% 68%;
+}
+
+#image-box {
+    left: -10%;
+    bottom: 23%;
+    position: absolute;
+    transition: 0.8s;
+}
+
+#image-box.hover {
+    left: -14%;
+}
+
+.right-container {
+    height: 100%;
+    width: 50%;
+    max-height: 100vh;
+    padding: 2rem 8rem 0.5rem 1rem;
+}
+
+
+.attribution { font-size: 11px; text-align: center; color: white; margin-top: 2rem;}
+.attribution a { color: var(--color-main-orange); }
+
+@media (max-width: 925px) {
+    :root {
+        --font-size-tittle: 2.3rem;
+        --font-size-question: 1.1rem;
+        --font-size-answer: 1rem;
+    }
+    .container {
+        width: max(325px, 60vw);
+        height: max(530px, 50vh);
+        margin-top: 20%;
+        justify-content: center;
+    }
+    .left-container {
+        display: none;
+    }
+    .right-container {
+        width: 85%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3.5rem 0 0 0;
+        background-image: url('./images/bg-pattern-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+    
+    .answer{
+        align-self: flex-start;
+    }
+    
+    .right-container::before {
+        content: url('./images/illustration-woman-online-mobile.svg');
+        width: 20rem;
+        height: auto;
+        position: absolute;
+        top: -20.5%;
+        align-self: center;
+    }
+}
